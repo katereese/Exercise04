@@ -64,8 +64,7 @@ def inner_four_end(input_list):
     """Return the sixth, fifth, fourth, and third elements from the end of the
     list, in that order.
     """
-    new_input_list = input_list[5, 4, 3, 2]
-    return new_input_list
+    return input_list[-6:-3] 
     pass
 
 def replace_head(input_list):
@@ -85,13 +84,16 @@ def replace_middle(input_list):
     """Replace all elements of the input list with the the values 42 and 37, in
     that order, except for the first two and last two elements.
     """
-    input_list[5, 4, 3, 2] = 42, 37
-    return input_list
+    list1 = input_list[0:2]
+    list2 = [42, 37] * ((len(input_list) - 4) / 2)
+    list3 = [input_list[-2]] + [input_list[-1]]
+    return list1 + list2 + list3
     pass
 
 def delete_third_and_seventh(input_list):
     """Remove the third and seventh elements of the input list."""
-    del input_list[2, 6]
+    del input_list[2]
+    del input_list[6]
     return input_list
     pass
 
